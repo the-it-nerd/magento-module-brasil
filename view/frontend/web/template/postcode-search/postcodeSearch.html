@@ -1,0 +1,78 @@
+<div class="postcodeSearch--wrapper">
+    <div class="postcodeSearch--form">
+        <form>
+            <fieldset class="fieldset">
+                <div class="field region required">
+                    <label class="label">
+                        <span data-bind="i18n: 'State/Province'"></span>
+                    </label>
+                    <div class="control">
+                        <select data-bind="value: formValues.region" name="region_id" class="validate-select region_id required-entry" aria-required="true" defaultvalue="0" data-np-autofill-type="state">
+                            <option value="" data-bind="i18n: 'Please select a region, state or province.'"></option>
+                            <!-- ko foreach: regionJson.BR -->
+                            <option data-bind="text: name, attr: {value: code}"></option>
+                            <!-- /ko -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field required">
+                    <label class="label">
+                        <span data-bind="i18n: 'City'"></span>
+                    </label>
+                    <div class="control">
+                        <input  data-bind="value: formValues.city" type="text" name="city" value=""  class="input-text" autocomplete="off" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="field required">
+                    <label class="label">
+                        <span data-bind="i18n: 'Street'"></span>
+                    </label>
+                    <div class="control">
+                        <input type="text"   data-bind="value: formValues.street" name="street" value=""  class="input-text" autocomplete="off" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="button" class="action submit primary" data-bind="click: searchPostcodes">
+                            <span data-bind="i18n: 'Search'"></span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="postcodeSearch--results">
+        <!-- ko if: postcodeOptions().length > 0 -->
+        <table>
+            <thead>
+                <tr>
+                    <th data-bind="i18n: 'Region'"></th>
+                    <th data-bind="i18n: 'City'"></th>
+                    <th data-bind="i18n: 'Street'"></th>
+                    <th data-bind="i18n: 'Complement'"></th>
+                    <th data-bind="i18n: 'Postcode'"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ko foreach: postcodeOptions -->
+                <tr>
+                    <td data-bind="text: region_code"></td>
+                    <td data-bind="text: city"></td>
+                    <td data-bind="text: street"></td>
+                    <td data-bind="text: complement"></td>
+                    <td data-bind="text: postcode"></td>
+                    <td><a href="javascript:void(0)" data-bind='i18n: "Select", event: {click: $parent.usePostcode.bind($parent)}'></a></td>
+                </tr>
+                <!-- /ko -->
+            </tbody>
+        </table>
+        <!-- /ko -->
+        <!-- ko if: showNotFoundMessage() -->
+            <span class="message error-message" data-bind="i18n: 'Sorry, no addresses were found using you search criteria, please validate your data and try again.'"></span>
+        <!-- /ko -->
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+    "name" : "the_it_nerd/module-brasil",
+    "type" : "magento2-module",
+    "license" : "OSL-3.0",
+    "authors" : [
+        {
+            "name" : "Raul Sakai",
+            "email" : "raul.sakai@theitnerd.io"
+        }
+    ],
+    "description" : "The IT Nerd - Magento 2 Brazilian localization module (without translation).",
+    "homepage" : "https://github.com/the-it-nerd/magento-module-brasil",
+    "keywords" : [
+        "magento",
+        "magento2"
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require" : {
+        "magento/framework" : ">=102.0.0",
+        "magento/magento-composer-installer" : "*",
+        "the_it_nerd/module-core" : "*"
+    },
+    "autoload" : {
+        "files" : [
+            "registration.php"
+        ],
+        "psr-4" : {
+            "TheITNerd\\Brasil\\" : ""
+        }
+    }
+}

@@ -1,0 +1,57 @@
+& when (@media-common = true) {
+    .postcodeSearch--wrapper {
+        .postcodeSearch--results {
+            overflow: auto;
+
+            .message.error-message {
+                .lib-message('error');
+            }
+
+            table {
+                .lib-table();
+            }
+        }
+    }
+
+    .field.street {
+        > legend.label {
+            display: none;
+        }
+
+        .field {
+            .label {
+                border: unset;
+                clip: unset;
+                height: unset;
+                margin: unset;
+                overflow: unset;
+                padding: unset;
+                position: unset;
+                width: unset;
+            }
+
+            .lib-form-field();
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .postcodeSearch--wrapper {
+
+        .postcodeSearch--form {
+            form {
+                fieldset {
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-direction: row;
+                    align-items: flex-end;
+
+                    > .field {
+                        margin: 0 @form-field__vertical-indent 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
