@@ -1,6 +1,12 @@
 # Introdução
 Este módulo tem como intenção facilitar a nacionalização da plataforma Magento 2 para o mercado Brasileiro.
 
+# Instalação
+Instale via composer
+```
+composer require the_it_nerd/module-brasil
+```
+
 # Funcionalidades
 - Implementação de validações em campos do tipo texto
   - CPF
