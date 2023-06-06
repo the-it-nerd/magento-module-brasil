@@ -119,30 +119,31 @@ define([
          * @returns {theitnerd.postcode}
          */
         createPostcodeSearchLink: function() {
-            let linkHTML = '<div class="search-postcode"><a href="javascript:void(0)" id="' + this.options.uniqueID + '"> ' + $.mage.__('I dont know my postcode') + '</a></div>';
+            let linkHTML = `<div class="search-postcode"><a href="javascript:void(0)" id="${this.options.uniqueID}">${$.mage.__('I dont know my postcode')}</a></div>`;
             this.options.parentElement.append(linkHTML);
 
-            let modalHTML = '<div style="display:none" id="' + this.options.modalID + '">';
-            modalHTML += '<div class="content">';
-            modalHTML += '<div data-bind="scope: \'postcodeSearch\'">';
-            modalHTML += '    <!-- ko template: getTemplate() --><!-- /ko -->';
-            modalHTML += '</div>';
-            modalHTML += '<script type="text/x-magento-init">';
-            modalHTML += '{';
-            modalHTML += '    "*" : {';
-            modalHTML += '        "Magento_Ui/js/core/app" : {';
-            modalHTML += '            "components" : {';
-            modalHTML += '                "postcodeSearch" : {';
-            modalHTML += '                    "component": "TheITNerd_Brasil/js/view/postcodeSearch",';
-            modalHTML += '                    "template" : "TheITNerd_Brasil/postcode-search/postcodeSearch",';
-            modalHTML += '                    "regionJson" : ' + JSON.stringify(this.options.regionJson);
-            modalHTML += '                }';
-            modalHTML += '            }';
-            modalHTML += '        }';
-            modalHTML += '    }';
-            modalHTML += '}';
-            modalHTML += '</script>';
-            modalHTML += '</div>';
+            let modalHTML = `<div style="display:none" id="${this.options.modalID}">
+            <div class="content">
+                <div data-bind="scope: 'postcodeSearch'">
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                </div>
+                <script type="text/x-magento-init">
+                {
+                    "*" : {
+                        "Magento_Ui/js/core/app" : {
+                            "components" : {
+                                "postcodeSearch" : {
+                                    "component": "TheITNerd_Brasil/js/view/postcodeSearch",
+                                    "template" : "TheITNerd_Brasil/postcode-search/postcodeSearch",
+                                    "regionJson" : ${JSON.stringify(this.options.regionJson)}
+                                }
+                            }
+                        }
+                    }
+                }
+                </script>
+            </div>
+            </div>`;
             $('body').append(modalHTML);
             let modalEl = $('#' + this.options.modalID);
             modalEl.trigger("contentUpdated");
