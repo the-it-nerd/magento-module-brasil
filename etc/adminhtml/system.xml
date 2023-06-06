@@ -1,28 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="address_search" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-            <class>separator-top</class>
-            <label>Address Search</label>
-            <tab>theitnerd</tab>
-            <resource>TheITNerd_Brasil::config</resource>
-            <group id="api" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Address Search</label>
-                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Enable Address search functionality </label>
-                    <comment>This will enable customers to type their postcode and search for the full address and to use a full address to search for the postcode.</comment>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                <field id="adapter" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Address search API Adapter</label>
-                    <comment>Select which aPI you want to use for your website.</comment>
-                    <source_model>TheITNerd\Brasil\Model\Config\PostcodeAdapters</source_model>
-                    <depends>
-                        <field id="address_search/api/enabled">1</field>
-                    </depends>
-                </field>
 
-            </group>
-        </section>
     </system>
 </config>

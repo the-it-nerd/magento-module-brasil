@@ -12,9 +12,7 @@
     <!-- END CHECKOUT MODIFICATIONS -->
 
     <!-- START POSTCODE SEARCH API -->
-    <preference for="TheITNerd\Brasil\Api\PostcodeSearchInterface" type="TheITNerd\Brasil\Model\Api\PostcodeSearch"/>
-
-    <type name="TheITNerd\Brasil\Model\Config\PostcodeAdapters">
+    <type name="TheITNerd\Core\Model\Config\PostcodeAdapters">
         <arguments>
             <argument name="adapters" xsi:type="array">
                 <item name="theitnerd_brasil_viacep_postcode_adapter" xsi:type="string">TheITNerd\Brasil\Model\Clients\ViaCEP\ViaCEPClient</item>
