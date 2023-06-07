@@ -7,7 +7,8 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 use TheITNerd\Brasil\Api\Data\BrazilCountyInterface;
 
 /**
- * Resource model for brazil_county table
+ * Class BrazilCounty
+ * @package TheITNerd\Brasil\Model\ResourceModel
  */
 class BrazilCounty extends AbstractDb
 {

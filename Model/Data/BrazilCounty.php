@@ -8,7 +8,8 @@ use TheITNerd\Brasil\Api\Data\BrazilCountyInterface;
 use TheITNerd\Brasil\Model\ResourceModel\BrazilCounty as BrazilCountyResourceModel;
 
 /**
- * Data model for brazil_county table
+ * Class BrazilCounty
+ * @package TheITNerd\Brasil\Model\Data
  */
 class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterface
 {

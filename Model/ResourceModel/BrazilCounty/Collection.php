@@ -9,7 +9,8 @@ use TheITNerd\Brasil\Api\Data\BrazilCountyInterface;
 use TheITNerd\Brasil\Model\Data\BrazilCounty;
 
 /**
- * Collection class for brazil_county table
+ * Class Collection
+ * @package TheITNerd\Brasil\Model\ResourceModel\BrazilCounty
  */
 class Collection extends AbstractCollection
 {

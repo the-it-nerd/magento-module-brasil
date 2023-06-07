@@ -4,7 +4,8 @@ declare(strict_types=1);
 namespace TheITNerd\Brasil\Api\Data;
 
 /**
- * Interface for brazil_county table data model
+ * Interface BrazilCountyInterface
+ * @package TheITNerd\Brasil\Api\Data
  */
 interface BrazilCountyInterface
 {

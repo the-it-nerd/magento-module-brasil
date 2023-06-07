@@ -10,7 +10,8 @@ use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
- * Interface for brazil_county table repository
+ * Interface BrazilCountyRepositoryInterface
+ * @package TheITNerd\Brasil\Api\Data
  */
 interface BrazilCountyRepositoryInterface
 {

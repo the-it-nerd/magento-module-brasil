@@ -19,6 +19,7 @@ use Magento\Framework\Api\SearchResultsInterface;
 
 /**
  * Class BrazilCountyRepository
+ * @package TheITNerd\Brasil\Model\Data
  */
 class BrazilCountyRepository implements BrazilCountyRepositoryInterface
 {
@@ -30,10 +31,10 @@ class BrazilCountyRepository implements BrazilCountyRepositoryInterface
      * @param SearchResultsInterfaceFactory $searchResultsFactory
      */
     public function __construct(
-        private readonly BrazilCountyResource $resource,
-        private readonly BrazilCountyInterfaceFactory $brazilCountyFactory,
+        private readonly BrazilCountyResource          $resource,
+        private readonly BrazilCountyInterfaceFactory  $brazilCountyFactory,
         private readonly BrazilCountyCollectionFactory $brazilCountyCollectionFactory,
-        private readonly CollectionProcessorInterface $collectionProcessor,
+        private readonly CollectionProcessorInterface  $collectionProcessor,
         private readonly SearchResultsInterfaceFactory $searchResultsFactory
     ) {
     }

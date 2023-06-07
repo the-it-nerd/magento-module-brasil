@@ -12,7 +12,8 @@ use TheITNerd\Brasil\Api\Data\BrazilCountyRepositoryInterface;
 use TheITNerd\Brasil\Api\Data\BrazilCountyInterfaceFactory;
 
 /**
- * Data patch to insert data in brazil_county table
+ * Class PopulateBrazilCountyTable
+ * @package TheITNerd\Brasil\Setup\Patch\Data
  */
 class PopulateBrazilCountyTable implements DataPatchInterface
 {
@@ -23,10 +24,10 @@ class PopulateBrazilCountyTable implements DataPatchInterface
      * @param BrazilCountyInterfaceFactory $brazilCountyFactory
      */
     public function __construct(
-        private readonly ModuleDataSetupInterface $moduleDataSetup,
-        private readonly Curl $curl,
+        private readonly ModuleDataSetupInterface        $moduleDataSetup,
+        private readonly Curl                            $curl,
         private readonly BrazilCountyRepositoryInterface $brazilCountyRepository,
-        private readonly BrazilCountyInterfaceFactory $brazilCountyFactory
+        private readonly BrazilCountyInterfaceFactory    $brazilCountyFactory
     ) {
     }
 

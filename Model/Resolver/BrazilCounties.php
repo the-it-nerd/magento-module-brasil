@@ -12,7 +12,8 @@ use TheITNerd\Brasil\Api\Data\BrazilCountyRepositoryInterface;
 use Magento\Framework\GraphQl\Query\ResolverInterface;
 
 /**
- * Resolver to return county information based on filters
+ * Class BrazilCounties
+ * @package TheITNerd\Brasil\Model\Resolver
  */
 class BrazilCounties implements ResolverInterface
 {
@@ -22,7 +23,7 @@ class BrazilCounties implements ResolverInterface
      */
     public function __construct(
         private readonly BrazilCountyRepositoryInterface $brazilCountyRepository,
-        private readonly SearchCriteriaBuilder $searchCriteriaBuilder
+        private readonly SearchCriteriaBuilder           $searchCriteriaBuilder
     ) {
     }
 
