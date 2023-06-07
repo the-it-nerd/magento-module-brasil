@@ -51,43 +51,28 @@ class PopulateBrazilCountyTable implements DataPatchInterface
 
         $data = json_decode($response, true);
 
-        $batchSize = 1000;
-        $batches = array_chunk($data, $batchSize);
+        foreach ($data as $county) {
+            /** @var $brazilCounty BrazilCountyInterface */
+            $brazilCounty = $this->brazilCountyFactory->create();
 
-        foreach ($batches as $batchNum => $batch) {
-            $this->moduleDataSetup->getConnection()->beginTransaction();
-            try {
-                foreach ($batch as $county) {
-                    /** @var $brazilCounty BrazilCountyInterface */
-                    $brazilCounty = $this->brazilCountyFactory->create();
+            $brazilCounty->setCountyId($county['municipio-id'])
+                ->setCountyName($county['municipio-nome'])
+                ->setMicroregionId($county['microrregiao-id'])
+                ->setMicroregionName($county['microrregiao-nome'])
+                ->setMesoregionId($county['mesorregiao-id'])
+                ->setMesoregionName($county['mesorregiao-nome'])
+                ->setImmediateRegionId($county['regiao-imediata-id'])
+                ->setImmediateRegionName($county['regiao-imediata-nome'])
+                ->setIntermediateRegionId($county['regiao-intermediaria-id'])
+                ->setIntermediateRegionName($county['regiao-intermediaria-nome'])
+                ->setStateId($county['UF-id'])
+                ->setStateCode($county['UF-sigla'])
+                ->setStateName($county['UF-nome'])
+                ->setRegionId($county['regiao-id'])
+                ->setRegionCode($county['regiao-sigla'])
+                ->setRegionName($county['regiao-nome']);
 
-                    $brazilCounty->setCountyId($county['municipio-id'])
-                        ->setCountyName($county['municipio-nome'])
-                        ->setMicroregionId($county['microrregiao-id'])
-                        ->setMicroregionName($county['microrregiao-nome'])
-                        ->setMesoregionId($county['mesorregiao-id'])
-                        ->setMesoregionName($county['mesorregiao-nome'])
-                        ->setImmediateRegionId($county['regiao-imediata-id'])
-                        ->setImmediateRegionName($county['regiao-imediata-nome'])
-                        ->setIntermediateRegionId($county['regiao-intermediaria-id'])
-                        ->setIntermediateRegionName($county['regiao-intermediaria-nome'])
-                        ->setStateId($county['UF-id'])
-                        ->setStateCode($county['UF-sigla'])
-                        ->setStateName($county['UF-nome'])
-                        ->setRegionId($county['regiao-id'])
-                        ->setRegionCode($county['regiao-sigla'])
-                        ->setRegionName($county['regiao-nome']);
-
-                    $this->brazilCountyRepository->save($brazilCounty);
-                }
-                $this->moduleDataSetup->getConnection()->commit();
-            } catch (\Exception $e) {
-                $this->moduleDataSetup->getConnection()->rollBack();
-                throw new CouldNotSaveException(__(
-                    'An error occurred while saving batch number %1.',
-                    $batchNum
-                ), $e);
-            }
+            $this->brazilCountyRepository->save($brazilCounty);
         }
 
         $this->moduleDataSetup->endSetup();
