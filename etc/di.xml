@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
+    <!-- START INTERFACE PREFERENCE DECLARATION -->
+    <preference for="TheITNerd\Brasil\Api\Data\BrazilCountyInterface" type="TheITNerd\Brasil\Model\Data\BrazilCounty"/>
+    <preference for="TheITNerd\Brasil\Api\Data\BrazilCountyRepositoryInterface" type="TheITNerd\Brasil\Model\Data\BrazilCountyRepository"/>
+    <!-- END INTERFACE PREFERENCE DECLARATION -->
+
     <!-- START CHECKOUT MODIFICATIONS -->
     <type name="Magento\Checkout\Block\Cart\LayoutProcessor">
         <plugin name="change_checkout_cart_shipping_estimate_form" type="TheITNerd\Brasil\Plugin\Magento\Checkout\Block\Cart\LayoutProcessorPlugin"/>
