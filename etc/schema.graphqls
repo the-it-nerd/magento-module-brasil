@@ -1,0 +1,46 @@
+type BrazilCounty {
+    entity_id: Int
+    county_id: Int
+    county_name: String
+    microregion_id: Int
+    microregion_name: String
+    mesoregion_id: Int
+    mesoregion_name: String
+    immediate_region_id: Int
+    immediate_region_name: String
+    intermediate_region_id: Int
+    intermediate_region_name: String
+    state_id: Int
+    state_code: String
+    state_name: String
+    region_id: Int
+    region_code: String
+    region_name: String
+}
+
+input BrazilCountyFilterInput {
+    field: String! @doc(description:"Field to be filtered")
+    filter: FilterTypeInput! @doc(description:"Filter declaration")
+}
+
+type Query {
+    brazilCounties(filters: [BrazilCountyFilterInput]): [BrazilCounty]
+        @resolver(class: "TheITNerd\\Brasil\\Model\\Resolver\\BrazilCounties")
+        @doc(description: "Resolver to return county information based on filters")
+}
+# Example of query
+#query{
+#    brazilCounties(
+#        filters: [
+#            {
+#                field: "county_name"
+#                filter: {
+#                    eq: "Itupeva"
+#                }
+#            }
+#        ]
+#    ) {
+#        county_id
+#        ...
+#    }
+#}
