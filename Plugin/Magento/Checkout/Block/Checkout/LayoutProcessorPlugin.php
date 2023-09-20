@@ -4,7 +4,6 @@ namespace TheITNerd\Brasil\Plugin\Magento\Checkout\Block\Checkout;
 
 use Magento\Checkout\Block\Checkout\LayoutProcessor;
 use TheITNerd\Brasil\Helper\Address;
-
 /**
  * Class LayoutProcessorPlugin
  * @package TheITNerd\Brasil\Plugin\Magento\Checkout\Block\Checkout

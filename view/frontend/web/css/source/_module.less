@@ -1,0 +1,16 @@
+
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    .checkout-cart-index {
+        #block-summary {
+            #shipping-zip-form {
+                [name="shippingAddress.country_id"],
+                [name="shippingAddress.region_id"] {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
