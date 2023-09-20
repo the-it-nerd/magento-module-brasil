@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="brazil_county" resource="default" engine="innodb" comment="Counties table with IBGE data">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" comment="Entity ID" identity="true"/>
+        <column xsi:type="int" name="county_id" nullable="false" comment="County id"/>
+        <column xsi:type="varchar" name="county_name" nullable="false" length="255" comment="County name"/>
+        <column xsi:type="int" name="microregion_id" nullable="false" comment="Microregion id"/>
+        <column xsi:type="varchar" name="microregion_name" nullable="false" length="255" comment="Microregion name"/>
+        <column xsi:type="int" name="mesoregion_id" nullable="false" comment="Mesoregion id"/>
+        <column xsi:type="varchar" name="mesoregion_name" nullable="false" length="255" comment="Mesoregion name"/>
+        <column xsi:type="int" name="immediate_region_id" nullable="false" comment="Immediate Region ID"/>
+        <column xsi:type="varchar" name="immediate_region_name" nullable="false" length="255" comment="Immediate Region Name"/>
+        <column xsi:type="int" name="intermediate_region_id" nullable="false" comment="Intermediate Region ID"/>
+        <column xsi:type="varchar" name="intermediate_region_name" nullable="false" length="255" comment="Intermediate Region Name"/>
+        <column xsi:type="int" name="state_id" nullable="false" comment="State ID"/>
+        <column xsi:type="varchar" name="state_code" nullable="false" length="2" comment="State Code (UF)"/>
+        <column xsi:type="varchar" name="state_name" nullable="false" length="255" comment="State Name"/>
+        <column xsi:type="int" name="region_id" nullable="false" comment="Region ID"/>
+        <column xsi:type="varchar" name="region_code" nullable="false" length="2" comment="Region Code"/>
+        <column xsi:type="varchar" name="region_name" nullable="false" length="255" comment="Region Name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="BRAZIL_COUNTY_UNIQUE_COUNTY_ID">
+            <column name="county_id"/>
+        </constraint>
+    </table>
+</schema>
