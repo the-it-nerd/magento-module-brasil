@@ -13,6 +13,10 @@ use Magento\Framework\App\Helper\Context;
 class Address extends AbstractHelper
 {
 
+    /**
+     * @param Context $context
+     * @param CustomerAddressHelper $customerAddressHelper
+     */
     public function __construct(
         Context $context,
         protected readonly CustomerAddressHelper $customerAddressHelper
@@ -84,7 +88,12 @@ class Address extends AbstractHelper
         return '';
     }
 
-    public function companyAddressGetStreetLines()
+    /**
+     * @return int
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
+    public function companyAddressGetStreetLines(): int
     {
         return $this->customerAddressHelper->getStreetLines();
     }
