@@ -13,7 +13,15 @@ $regionProvider = $block->getRegionProvider();
     "#postcode": {
         "TheITNerd_Core/js/postcode": {
             "mask": "00000-000",
-            "regionJson": <?= $regionProvider->getRegionJson() ?>
+            "regionJson": <?= $regionProvider->getRegionJson() ?>,
+            "addressFields": {
+                "street": "[name='company[street][0]']",
+                "neighborhood": "[name='company[street][3]']",
+                "city": "[name='company[city]']",
+                "region_id": "[name='company[region_id]']",
+                "region": "[name='company[region]']",
+                "country": "[name='company[country_id]']"
+            }
         }
     },
     "#vat_tax_id": {
