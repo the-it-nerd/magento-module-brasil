@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_form_template_handle"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="customer.address.form.masks"
+                   template="TheITNerd_Brasil::company/account/create/masks.phtml">
+                <arguments>
+                    <argument name="region_provider" xsi:type="object">
+                        Magento\Customer\ViewModel\Address\RegionProvider
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="company_account_create">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">
+                    TheITNerd_Brasil::Magento/Company/account/create.phtml
+                </argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

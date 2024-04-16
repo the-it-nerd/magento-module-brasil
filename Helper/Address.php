@@ -3,6 +3,8 @@
 namespace TheITNerd\Brasil\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Customer\Helper\Address as CustomerAddressHelper;
+use Magento\Framework\App\Helper\Context;
 
 /**
  * Class Address
@@ -10,6 +12,19 @@ use Magento\Framework\App\Helper\AbstractHelper;
  */
 class Address extends AbstractHelper
 {
+
+    /**
+     * @param Context $context
+     * @param CustomerAddressHelper $customerAddressHelper
+     */
+    public function __construct(
+        Context $context,
+        protected readonly CustomerAddressHelper $customerAddressHelper
+    )
+    {
+        parent::__construct($context);
+    }
+
     public const STREET_ADDRESS_CONFIG = [
         0 => [
             'label' => 'Street',
@@ -73,4 +88,13 @@ class Address extends AbstractHelper
         return '';
     }
 
+    /**
+     * @return int
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
+    public function companyAddressGetStreetLines(): int
+    {
+        return $this->customerAddressHelper->getStreetLines();
+    }
 }

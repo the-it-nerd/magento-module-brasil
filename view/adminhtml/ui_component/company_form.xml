@@ -1,0 +1,28 @@
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="address" sortOrder="30">
+        <container name="street_container" component="Magento_Ui/js/form/components/group">
+            <field name="street_third" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">street</item>
+                    </item>
+                </argument>
+                <settings>
+                    <dataType>text</dataType>
+                    <dataScope>2</dataScope>
+                </settings>
+            </field>
+            <field name="street_fourth" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">street</item>
+                    </item>
+                </argument>
+                <settings>
+                    <dataType>text</dataType>
+                    <dataScope>3</dataScope>
+                </settings>
+            </field>
+        </container>
+    </fieldset>
+</form>
