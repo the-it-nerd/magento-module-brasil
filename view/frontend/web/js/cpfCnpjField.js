@@ -25,6 +25,7 @@ define([
         },
 
         initOptions: function() {
+
             this.options.uniqueID = Math.random().toString(36).substring(2, 9);
             this.options.parentElement = this.element.closest(this.options.parent);
             this.options.labelElement = this.options.parentElement.find(this.options.label);
@@ -33,6 +34,11 @@ define([
         },
 
         createCnpjCheckbox: function() {
+
+            if (!this.options.cpf || !this.options.cnpj) {
+                return this;
+            }
+
             let html = '<div class="cnpj-checkbox"><label><input type="checkbox" id="' + this.options.uniqueID + '"/> ' + $.mage.__('Usar CNPJ') + '</label></div>';
             this.options.parentElement.append(html);
 
@@ -45,6 +51,9 @@ define([
         },
 
         isCNPJ: function() {
+            if (!this.options.cpf && this.options.cnpj) {
+                return true
+            }
             return $('#'+this.options.uniqueID).is(':checked');
         },
 
@@ -61,15 +70,16 @@ define([
                 this.element.data('theitnerdInputmask').remove();
             }
 
-            if(this.isCNPJ()) {
+            if(this.isCNPJ() && this.options.cnpj) {
                 this.element.inputmask({mask: this.options.masks.cnpj});
                 this.element.removeClass('validate-cpf');
                 this.element.addClass('validate-cnpj');
-            } else {
+            } else if (this.options.cpf) {
                 this.element.inputmask({mask: this.options.masks.cpf});
                 this.element.removeClass('validate-cnpj');
                 this.element.addClass('validate-cpf');
             }
+
 
             this.changeLabel();
         }
