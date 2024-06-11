@@ -4,16 +4,16 @@
 $regionProvider = $block->getRegionProvider();
 ?>
 <script type="text/x-magento-init">
-{
-    "#telephone": {
-        "TheITNerd_Core/js/inputMask": {
-            "mask": "(00) 0000-00009"
-        }
-    },
-    "#postcode": {
-        "TheITNerd_Core/js/postcode": {
-            "mask": "00000-000",
-            "regionJson": <?= $regionProvider->getRegionJson() ?>,
+    {
+        "#telephone": {
+            "TheITNerd_Core/js/inputMask": {
+                "mask": "(00) 0000-00009"
+            }
+        },
+        "#postcode": {
+            "TheITNerd_Core/js/postcode": {
+                "mask": "00000-000",
+                "regionJson": <?= $regionProvider->getRegionJson() ?>,
             "addressFields": {
                 "street": "[name='company[street][0]']",
                 "neighborhood": "[name='company[street][3]']",
@@ -26,11 +26,9 @@ $regionProvider = $block->getRegionProvider();
     },
     "#vat_tax_id": {
         "TheITNerd_Brasil/js/cpfCnpjField": {
-            "mask": "00000-000"
+            "mask": "00000-000",
+            "cpf": false
         }
-    },
-    "#vat_tax_id": {
-        "TheITNerd_Brasil/js/cpfCnpjField": {}
     }
 }
 </script>
