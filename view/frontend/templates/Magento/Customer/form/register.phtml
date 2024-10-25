@@ -20,8 +20,6 @@ $directoryHelper = $block->getData('directoryHelper');
 /** @var \Magento\Customer\ViewModel\Address\RegionProvider $regionProvider */
 $regionProvider = $block->getRegionProvider();
 $formData = $block->getFormData();
-/** @var \Magento\Customer\ViewModel\CreateAccountButton $createAccountButtonViewModel */
-$createAccountButtonViewModel = $block->getData('create_account_button_view_model');
 ?>
 <?php $displayAll = $block->getConfig('general/region/display_all'); ?>
 <?= $block->getChildHtml('form_fields_before') ?>
