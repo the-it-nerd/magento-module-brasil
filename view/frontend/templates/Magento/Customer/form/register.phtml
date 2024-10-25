@@ -280,7 +280,9 @@ $createAccountButtonViewModel = $block->getData('create_account_button_view_mode
                     class="action submit primary"
                     title="<?= $escaper->escapeHtmlAttr(__('Create an Account')) ?>"
                     id="send2"
-                <?php if ($createAccountButtonViewModel->disabled()): ?> disabled="disabled" <?php endif; ?>>
+                <?php if ($block->getButtonLockManager()->isDisabled('customer_create_form_submit')): ?>
+                    disabled="disabled"
+                <?php endif; ?>>
                 <span><?= $escaper->escapeHtml(__('Create an Account')) ?></span>
             </button>
         </div>
