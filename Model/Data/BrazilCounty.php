@@ -48,10 +48,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets microregion ID
      *
-     * @param int $microregionId
+     * @param int|null $microregionId
      * @return self
      */
-    public function setMicroregionId(int $microregionId): BrazilCountyInterface
+    public function setMicroregionId(?int $microregionId): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::MICROREGION_ID, $microregionId);
     }
@@ -59,10 +59,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets microregion name
      *
-     * @param string $microregionName
+     * @param string|null $microregionName
      * @return self
      */
-    public function setMicroregionName(string $microregionName): BrazilCountyInterface
+    public function setMicroregionName(?string $microregionName): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::MICROREGION_NAME, $microregionName);
     }
@@ -70,10 +70,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets mesoregion ID
      *
-     * @param int $mesoregionId
+     * @param int|null $mesoregionId
      * @return self
      */
-    public function setMesoregionId(int $mesoregionId): BrazilCountyInterface
+    public function setMesoregionId(?int $mesoregionId): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::MESOREGION_ID, $mesoregionId);
     }
@@ -81,10 +81,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets mesoregion name
      *
-     * @param string $mesoregionName
+     * @param string|null $mesoregionName
      * @return self
      */
-    public function setMesoregionName(string $mesoregionName): BrazilCountyInterface
+    public function setMesoregionName(?string $mesoregionName): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::MESOREGION_NAME, $mesoregionName);
     }
@@ -92,10 +92,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets immediate region ID
      *
-     * @param int $immediateRegionId
+     * @param int|null $immediateRegionId
      * @return self
      */
-    public function setImmediateRegionId(int $immediateRegionId): BrazilCountyInterface
+    public function setImmediateRegionId(?int $immediateRegionId): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::IMMEDIATE_REGION_ID, $immediateRegionId);
     }
@@ -103,10 +103,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets immediate region name
      *
-     * @param string $immediateRegionName
+     * @param string|null $immediateRegionName
      * @return self
      */
-    public function setImmediateRegionName(string $immediateRegionName): BrazilCountyInterface
+    public function setImmediateRegionName(?string $immediateRegionName): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::IMMEDIATE_REGION_NAME, $immediateRegionName);
     }
@@ -114,10 +114,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets intermediate region ID
      *
-     * @param int $intermediateRegionId
+     * @param int|null $intermediateRegionId
      * @return self
      */
-    public function setIntermediateRegionId(int $intermediateRegionId): BrazilCountyInterface
+    public function setIntermediateRegionId(?int $intermediateRegionId): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::INTERMEDIATE_REGION_ID, $intermediateRegionId);
     }
@@ -125,10 +125,10 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Sets intermediate region name
      *
-     * @param string $intermediateRegionName
+     * @param string|null $intermediateRegionName
      * @return self
      */
-    public function setIntermediateRegionName(string $intermediateRegionName): BrazilCountyInterface
+    public function setIntermediateRegionName(?string $intermediateRegionName): BrazilCountyInterface
     {
         return $this->setData(BrazilCountyInterface::INTERMEDIATE_REGION_NAME, $intermediateRegionName);
     }
@@ -232,19 +232,20 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Gets microregion ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getMicroregionId(): int
+    public function getMicroregionId(): ?int
     {
-        return (int) $this->getData(BrazilCountyInterface::MICROREGION_ID);
+        $value = $this->getData(BrazilCountyInterface::MICROREGION_ID);
+        return $value === null ? null : (int) $value;
     }
 
     /**
      * Gets microregion name
      *
-     * @return string
+     * @return string|null
      */
-    public function getMicroregionName(): string
+    public function getMicroregionName(): ?string
     {
         return $this->getData(BrazilCountyInterface::MICROREGION_NAME);
     }
@@ -252,19 +253,20 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Gets mesoregion ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getMesoregionId(): int
+    public function getMesoregionId(): ?int
     {
-        return (int) $this->getData(BrazilCountyInterface::MESOREGION_ID);
+        $value = $this->getData(BrazilCountyInterface::MESOREGION_ID);
+        return $value === null ? null : (int) $value;
     }
 
     /**
      * Gets mesoregion name
      *
-     * @return string
+     * @return string|null
      */
-    public function getMesoregionName(): string
+    public function getMesoregionName(): ?string
     {
         return $this->getData(BrazilCountyInterface::MESOREGION_NAME);
     }
@@ -272,19 +274,20 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Gets immediate region ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getImmediateRegionId(): int
+    public function getImmediateRegionId(): ?int
     {
-        return (int) $this->getData(BrazilCountyInterface::IMMEDIATE_REGION_ID);
+        $value = $this->getData(BrazilCountyInterface::IMMEDIATE_REGION_ID);
+        return $value === null ? null : (int) $value;
     }
 
     /**
      * Gets immediate region name
      *
-     * @return string
+     * @return string|null
      */
-    public function getImmediateRegionName(): string
+    public function getImmediateRegionName(): ?string
     {
         return $this->getData(BrazilCountyInterface::IMMEDIATE_REGION_NAME);
     }
@@ -292,19 +295,20 @@ class BrazilCounty extends AbstractExtensibleModel implements BrazilCountyInterf
     /**
      * Gets intermediate region ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getIntermediateRegionId(): int
+    public function getIntermediateRegionId(): ?int
     {
-        return (int) $this->getData(BrazilCountyInterface::INTERMEDIATE_REGION_ID);
+        $value = $this->getData(BrazilCountyInterface::INTERMEDIATE_REGION_ID);
+        return $value === null ? null : (int) $value;
     }
 
     /**
      * Gets intermediate region name
      *
-     * @return string
+     * @return string|null
      */
-    public function getIntermediateRegionName(): string
+    public function getIntermediateRegionName(): ?string
     {
         return $this->getData(BrazilCountyInterface::INTERMEDIATE_REGION_NAME);
     }

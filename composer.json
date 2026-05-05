@@ -21,7 +21,8 @@
         }
     ],
     "require" : {
-        "magento/framework" : ">=102.0.0",
+        "php" : "~8.4.0",
+        "magento/framework" : ">=103.0.0",
         "magento/magento-composer-installer" : "*",
         "the_it_nerd/module-core" : "*"
     },
