@@ -81,65 +81,65 @@ interface BrazilCountyInterface
     /**
      * Sets microregion ID
      *
-     * @param int $microregionId
+     * @param int|null $microregionId
      * @return self
      */
-    public function setMicroregionId(int $microregionId): BrazilCountyInterface;
+    public function setMicroregionId(?int $microregionId): BrazilCountyInterface;
 
     /**
      * Sets microregion name
      *
-     * @param string $microregionName
+     * @param string|null $microregionName
      * @return self
      */
-    public function setMicroregionName(string $microregionName): BrazilCountyInterface;
+    public function setMicroregionName(?string $microregionName): BrazilCountyInterface;
 
     /**
      * Sets mesoregion ID
      *
-     * @param int $mesoregionId
+     * @param int|null $mesoregionId
      * @return self
      */
-    public function setMesoregionId(int $mesoregionId): BrazilCountyInterface;
+    public function setMesoregionId(?int $mesoregionId): BrazilCountyInterface;
 
     /**
      * Sets mesoregion name
      *
-     * @param string $mesoregionName
+     * @param string|null $mesoregionName
      * @return self
      */
-    public function setMesoregionName(string $mesoregionName): BrazilCountyInterface;
+    public function setMesoregionName(?string $mesoregionName): BrazilCountyInterface;
 
     /**
      * Sets immediate region ID
      *
-     * @param int $immediateRegionId
+     * @param int|null $immediateRegionId
      * @return self
      */
-    public function setImmediateRegionId(int $immediateRegionId): BrazilCountyInterface;
+    public function setImmediateRegionId(?int $immediateRegionId): BrazilCountyInterface;
 
     /**
      * Sets immediate region name
      *
-     * @param string $immediateRegionName
+     * @param string|null $immediateRegionName
      * @return self
      */
-    public function setImmediateRegionName(string $immediateRegionName): BrazilCountyInterface;
+    public function setImmediateRegionName(?string $immediateRegionName): BrazilCountyInterface;
 
     /**
      * Sets intermediate region ID
      *
-     * @param int $intermediateRegionId
+     * @param int|null $intermediateRegionId
      * @return self
      */
-    public function setIntermediateRegionId(int $intermediateRegionId): BrazilCountyInterface;
+    public function setIntermediateRegionId(?int $intermediateRegionId): BrazilCountyInterface;
     /**
      * Sets intermediate region name
      *
-     * @param string $intermediateRegionName
+     * @param string|null $intermediateRegionName
      * @return self
      */
-    public function setIntermediateRegionName(string $intermediateRegionName): BrazilCountyInterface;
+    public function setIntermediateRegionName(?string $intermediateRegionName): BrazilCountyInterface;
 
     /**
      * Sets state ID
@@ -213,58 +213,58 @@ interface BrazilCountyInterface
     /**
      * Gets microregion ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getMicroregionId(): int;
+    public function getMicroregionId(): ?int;
 
     /**
      * Gets microregion name
      *
-     * @return string
+     * @return string|null
      */
-    public function getMicroregionName(): string;
+    public function getMicroregionName(): ?string;
 
     /**
      * Gets mesoregion ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getMesoregionId(): int;
+    public function getMesoregionId(): ?int;
 
     /**
      * Gets mesoregion name
      *
-     * @return string
+     * @return string|null
      */
-    public function getMesoregionName(): string;
+    public function getMesoregionName(): ?string;
 
     /**
      * Gets immediate region ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getImmediateRegionId(): int;
+    public function getImmediateRegionId(): ?int;
 
     /**
      * Gets immediate region name
      *
-     * @return string
+     * @return string|null
      */
-    public function getImmediateRegionName(): string;
+    public function getImmediateRegionName(): ?string;
 
     /**
      * Gets intermediate region ID
      *
-     * @return int
+     * @return int|null
      */
-    public function getIntermediateRegionId(): int;
+    public function getIntermediateRegionId(): ?int;
 
     /**
      * Gets intermediate region name
      *
-     * @return string
+     * @return string|null
      */
-    public function getIntermediateRegionName(): string;
+    public function getIntermediateRegionName(): ?string;
 
     /**
      * Gets state ID

@@ -56,22 +56,22 @@ class PopulateBrazilCountyTable implements DataPatchInterface
             /** @var $brazilCounty BrazilCountyInterface */
             $brazilCounty = $this->brazilCountyFactory->create();
 
-            $brazilCounty->setCountyId($county['municipio-id'])
-                ->setCountyName($county['municipio-nome'])
-                ->setMicroregionId($county['microrregiao-id'])
-                ->setMicroregionName($county['microrregiao-nome'])
-                ->setMesoregionId($county['mesorregiao-id'])
-                ->setMesoregionName($county['mesorregiao-nome'])
-                ->setImmediateRegionId($county['regiao-imediata-id'])
-                ->setImmediateRegionName($county['regiao-imediata-nome'])
-                ->setIntermediateRegionId($county['regiao-intermediaria-id'])
-                ->setIntermediateRegionName($county['regiao-intermediaria-nome'])
-                ->setStateId($county['UF-id'])
-                ->setStateCode($county['UF-sigla'])
-                ->setStateName($county['UF-nome'])
-                ->setRegionId($county['regiao-id'])
-                ->setRegionCode($county['regiao-sigla'])
-                ->setRegionName($county['regiao-nome']);
+            $brazilCounty->setCountyId((int) $county['municipio-id'])
+                ->setCountyName((string) $county['municipio-nome'])
+                ->setMicroregionId(isset($county['microrregiao-id']) ? (int) $county['microrregiao-id'] : null)
+                ->setMicroregionName($county['microrregiao-nome'] ?? null)
+                ->setMesoregionId(isset($county['mesorregiao-id']) ? (int) $county['mesorregiao-id'] : null)
+                ->setMesoregionName($county['mesorregiao-nome'] ?? null)
+                ->setImmediateRegionId(isset($county['regiao-imediata-id']) ? (int) $county['regiao-imediata-id'] : null)
+                ->setImmediateRegionName($county['regiao-imediata-nome'] ?? null)
+                ->setIntermediateRegionId(isset($county['regiao-intermediaria-id']) ? (int) $county['regiao-intermediaria-id'] : null)
+                ->setIntermediateRegionName($county['regiao-intermediaria-nome'] ?? null)
+                ->setStateId((int) $county['UF-id'])
+                ->setStateCode((string) $county['UF-sigla'])
+                ->setStateName((string) $county['UF-nome'])
+                ->setRegionId((int) $county['regiao-id'])
+                ->setRegionCode((string) $county['regiao-sigla'])
+                ->setRegionName((string) $county['regiao-nome']);
 
             $this->brazilCountyRepository->save($brazilCounty);
         }
