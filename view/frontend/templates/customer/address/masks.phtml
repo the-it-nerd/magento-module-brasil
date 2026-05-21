@@ -1,7 +1,10 @@
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
 /** @var \Magento\Customer\ViewModel\Address\RegionProvider $regionProvider */
+/** @var \TheITNerd\Core\Helper\Config $helper */
 $regionProvider = $block->getRegionProvider();
+$helper = $this->helper('TheITNerd\Core\Helper\Config');
+$isSearchEnabled = $helper->isEnabled() ? 'true' : 'false';
 ?>
 <script type="text/x-magento-init">
 {
@@ -13,7 +16,8 @@ $regionProvider = $block->getRegionProvider();
     "#zip": {
         "TheITNerd_Core/js/postcode": {
             "mask": "00000-000",
-            "regionJson": <?= $regionProvider->getRegionJson() ?>
+            "regionJson": <?= $regionProvider->getRegionJson() ?>,
+            "isAddressSearchEnabled": <?= $isSearchEnabled ?>
         }
     },
     "#vat_id": {
